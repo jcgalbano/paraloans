@@ -1,0 +1,15 @@
+@import "../Button/Button.module";
+
+.txtBtn {
+  @extend .btn;
+  background-color: theme("colors.general.white");
+  color: theme("colors.primary.500");
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: theme("colors.primary.50");
+    color: theme("colors.primary.500");
+  }
+
+  padding: theme("paddings.button.md");
+}
