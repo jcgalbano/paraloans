@@ -38,12 +38,12 @@ const config: Config = {
       destructive: { "300": "#f36356", "400": "#e44629" },
     },
     fontSize: {
-      xs: "0.625rem",
-      sm: "0.8125rem",
-      base: "0.875rem",
-      lg: "1rem",
-      xl: "1.375rem",
-      "2xl": "3.5rem",
+      xs: "10px",
+      sm: "13px",
+      base: "14px",
+      lg: "16px",
+      xl: "22px",
+      "2xl": "56px",
     },
     boxShadow: {
       brown: "0px 8px 8px 0px rgba(51,45,33,0.02)",
