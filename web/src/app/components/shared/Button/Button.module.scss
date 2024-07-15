@@ -1,0 +1,23 @@
+.btn {
+  border-radius: theme("borderRadius.rounded5px");
+  font-family: theme("fontFamily.proximaNova");
+  font-size: theme("fontSize.base");
+  background-color: theme("colors.general.white");
+  color: theme("colors.general.black");
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: theme("colors.general.black");
+    color: theme("colors.general.white");
+  }
+}
+
+.mdBtn {
+  @extend .btn;
+  padding: theme("paddings.button.md");
+}
+
+.lgBtn {
+  @extend .btn;
+  padding: theme("paddings.button.lg");
+}
