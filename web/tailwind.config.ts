@@ -7,6 +7,11 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      "proxima-nova": ["proxima-nova", "sans-serif"],
+      "proxima-nova-condensed": ["proxima-nova-condensed", "sans-serif"],
+      calluna: ["calluna", "serif"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
