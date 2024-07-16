@@ -1,0 +1,21 @@
+.navLink {
+  color: theme("colors.neutral.600");
+  font-family: theme("fontFamily.proximaNova");
+  font-size:  theme("fontSize.base");
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    color: theme("colors.neutral.700");
+    border-bottom: 1px solid theme("colors.neutral.700");
+  }
+
+  &.active {
+    color: theme("colors.primary.500");
+
+    &:hover {
+      color: theme("colors.primary.500");
+      border-bottom: 1px solid theme("colors.primary.500");
+    }
+  }
+}

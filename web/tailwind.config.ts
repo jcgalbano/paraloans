@@ -8,8 +8,8 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      "proxima-nova": ["proxima-nova", "sans-serif"],
-      "proxima-nova-condensed": ["proxima-nova-condensed", "sans-serif"],
+      proximaNova: ["proxima-nova", "sans-serif"],
+      proximaNovaCondensed: ["proxima-nova-condensed", "sans-serif"],
       calluna: ["calluna", "serif"],
     },
     colors: {
@@ -59,16 +59,13 @@ const config: Config = {
         "0px 21px 47px 0px rgba(184,184,184,0.1), 0px 85px 85px 0px rgba(184,184,184,0.09), 0px 190px 114px 0px rgba(184,184,184,0.05), 0px 338px 135px 0px rgba(184,184,184,0.01), 0px 529px 148px 0px rgba(184,184,184,0)",
     },
     borderRadius: {
-      "rounded-0": "0rem",
-      "rounded-1": "0.07142857142857142rem",
-      "rounded-2": "0.10714285714285714rem",
-      "rounded-3": "0.35714285714285715rem",
-      "rounded-4": "1.7142857142857142rem",
-      "rounded-5": "2.142857142857143rem",
-      "rounded-6": "4.081590924944196rem",
-      "rounded-7": "71.35714285714286rem",
+      rounded5px: "5px",
+    },
+    paddings: {
+      button: { md: "12px 24px", lg: "17px 34px" },
     },
     extend: {
+      screens: { "3xl": "1700px", "4xl": "1920px", "5xl": "2560px" },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
