@@ -1,18 +1,23 @@
 import { useRouter } from "next/navigation";
 
+import { motion } from "framer-motion";
+
 import { Navlink } from "../Navlink";
 import { PrimaryButton } from "../../shared/PrimaryButton";
 import { OutlinedButton } from "../../shared/OutlinedButton";
 import { CollapsedNavProps } from "./CollapsedNav.types";
+import { collapsedNavVariants } from "./CollapsedNav.animation";
 
 export const CollapsedNav = ({ collapsed }: CollapsedNavProps) => {
   const router = useRouter();
 
   return (
-    <div
-      className={`bg-general-white p-5 z-3 ${
-        collapsed ? "" : "hidden"
-      } lg:hidden`}
+    <motion.div
+      className={`fixed w-screen bg-general-white p-5 z-3 lg:hidden`}
+      initial={"hidden"}
+      animate={collapsed ? "visible" : "hidden"}
+      variants={collapsedNavVariants}
+      transition={{ duration: 0.2 }}
     >
       <div className="nav-links flex flex-col items-start space-y-8">
         <Navlink content={"Home"} link="/" isActive={true} />
@@ -27,6 +32,6 @@ export const CollapsedNav = ({ collapsed }: CollapsedNavProps) => {
           callback={() => router.push("/personal-details")}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };

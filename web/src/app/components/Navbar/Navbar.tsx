@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky flex flex-col">
-      <div className="flex justify-between items-center bg-general-white p-5">
+      <div className="flex justify-between h-20 items-center bg-general-white p-5">
         <Navlogo />
         <div className="nav-links flex space-between space-x-10 hidden lg:block">
           <Navlink content={"Home"} link="/" isActive={true} />
