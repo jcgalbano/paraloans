@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { Navlink } from "./Navlink";
 import { Navlogo } from "./Navlogo";
@@ -12,6 +13,7 @@ import BurgerMenu from "/public/burger.svg";
 
 export const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -19,7 +21,7 @@ export const Navbar = () => {
       <div className="flex justify-between h-20 items-center bg-general-white p-5">
         <Navlogo />
         <div className="nav-links flex space-between space-x-10 hidden lg:block">
-          <Navlink content={"Home"} link="/" isActive={true} />
+          <Navlink content={"Home"} link="/" isActive={pathname == "/"} />
           <Navlink content={"About"} link="/" />
           <Navlink content={"Careers"} link="/" />
           <Navlink content={"Lenders"} link="/" />
