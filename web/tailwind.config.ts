@@ -62,7 +62,13 @@ const config: Config = {
       rounded5px: "5px",
     },
     extend: {
-      screens: { "3xl": "1700px", "4xl": "1920px", "5xl": "2560px" },
+      screens: {
+        xs: "400px",
+        "2sm": "900px",
+        "3xl": "1700px",
+        "4xl": "1920px",
+        "5xl": "2560px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
