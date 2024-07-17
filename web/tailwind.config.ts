@@ -61,9 +61,6 @@ const config: Config = {
     borderRadius: {
       rounded5px: "5px",
     },
-    paddings: {
-      button: { md: "12px 24px", lg: "17px 34px" },
-    },
     extend: {
       screens: { "3xl": "1700px", "4xl": "1920px", "5xl": "2560px" },
       backgroundImage: {
