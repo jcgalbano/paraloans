@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { NextPage } from "next";
 
+import { FormFooter } from "../components/FormFooter";
 import { NavbarAlt } from "../components/NavbarAlt";
 
 import SidebarImg from "/public/sidebar-img.jpg";
@@ -16,6 +17,7 @@ const PersonalDetails: NextPage = () => {
         />
       </div>
       <NavbarAlt />
+      <FormFooter />
     </div>
   );
 };
