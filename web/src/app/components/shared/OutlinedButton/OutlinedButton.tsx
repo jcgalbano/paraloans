@@ -1,9 +1,14 @@
 import { TextButtonProps } from "../TextButton/TextButton.types";
-import styles from "./OutlinedButton.module.scss";
 
 export const OutlinedButton = ({ content, callback }: TextButtonProps) => {
   return (
-    <button className={styles.outlinedBtn} onClick={callback}>
+    <button
+      className="bg-general-white font-proximaNova text-base
+    text-primary-500 uppercase rounded-rounded5px p-lgButton
+    border-[1px] border-primary-400
+    hover:bg-primary-50"
+      onClick={callback}
+    >
       {content}
     </button>
   );
