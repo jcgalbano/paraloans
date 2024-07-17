@@ -61,6 +61,7 @@ const config: Config = {
     borderRadius: {
       rounded5px: "5px",
     },
+    padding: { mdButton: "12px 24px", lgButton: "17px 34px" },
     paddings: {
       button: { md: "12px 24px", lg: "17px 34px" },
     },

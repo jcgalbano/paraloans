@@ -1,5 +1,4 @@
 import { PrimaryButtonProps } from "./PrimaryButton.types";
-import styles from "./PrimaryButton.module.scss";
 
 export const PrimaryButton = ({
   content,
@@ -9,7 +8,12 @@ export const PrimaryButton = ({
   const sizeStyle: string = size || "md";
 
   return (
-    <button className={styles[`${sizeStyle}PrimaryBtn`]} onClick={callback}>
+    <button
+      className="bg-primary-500 font-proximaNova text-base
+      text-general-white uppercase rounded-rounded5px p-lgButton
+      hover:bg-primary-600"
+      onClick={callback}
+    >
       {content}
     </button>
   );
