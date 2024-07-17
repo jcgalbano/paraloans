@@ -16,8 +16,8 @@ export const NavbarAlt = () => {
         <div className="hidden 2sm:block">
           <Navlogo type="alt" />
         </div>
-        <div className="flex space-x-1 xs:space-x-3">
-          <div className="flex items-center space-x-0 xs:space-x-3">
+        <div className="flex space-x-2 xs:space-x-3">
+          <div className="flex items-center space-x-0 xs:space-x-1">
             <Image height={16} width={16} src={PhoneIcon} alt="phone icon" />{" "}
             <span className="font-proximaNova text-base text-neutral-700">
               1300 755 494
