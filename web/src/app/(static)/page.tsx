@@ -4,8 +4,8 @@ import Image from "next/image";
 import { NextPage } from "next";
 import { useRouter } from "next/navigation";
 
-import { Navbar } from "./components/Navbar/Navbar";
-import { PrimaryButton } from "./components/shared/PrimaryButton";
+import { Navbar } from "../components/Navbar/Navbar";
+import { PrimaryButton } from "../components/shared/PrimaryButton";
 
 import HeroImage from "/public/hero-img.svg";
 
