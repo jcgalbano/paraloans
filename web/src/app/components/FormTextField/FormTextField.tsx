@@ -6,12 +6,14 @@ export const FormTextField = <FormObj extends FieldValues>({
   label,
   required,
 }: FormTextFieldProps<FormObj>) => {
-  const { register, clearErrors, formState } = useFormContext();
+  const { register, clearErrors, formState, setValue } = useFormContext();
 
-  const handleInputChange = (field: Path<FormObj>) => {
+  const handleInputChange = (field: Path<FormObj>, value: string) => {
     if (formState.errors[field]) {
       clearErrors(field);
     }
+
+    setValue(field, value as any);
   };
 
   return (
@@ -26,11 +28,11 @@ export const FormTextField = <FormObj extends FieldValues>({
       <input
         className="font-proximaNova shadow appearance-none border rounded-rounded5px
         w-full py-2 px-3 text-gray-700 leading-tight
-        focus:outline-primary-300 focus:shadow-outline"
+        focus:border-primary-300 focus:outline-none"
         id={label}
         type="text"
         {...register(field)}
-        onChange={() => handleInputChange(field)}
+        onChange={(e) => handleInputChange(field, e.target.value)}
       />
       {formState.errors[field] && (
         <p className="font-proximaNova text-base text-errors-600">
