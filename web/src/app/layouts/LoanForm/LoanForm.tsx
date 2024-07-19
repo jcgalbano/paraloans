@@ -23,7 +23,7 @@ export const LoanForm = ({ children }: { children: React.ReactNode }) => {
         <NavbarAlt />
         <div className="flex">
           <Image
-            className="h-screen hidden 2sm:block z-1"
+            className="h-screen w-auto hidden 2sm:block z-1"
             src={SidebarImg}
             alt="sidebar img"
           />

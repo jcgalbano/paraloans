@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-datepicker {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.03);
+}
+
+.react-datepicker__input-container {
+  display: flex !important;
+  align-items: center !important;
+
+  input {
+    font-family: theme("fontFamily.proximaNova");
+    color: theme("colors.neutral.800");
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid theme("colors.neutral.100");
+    border-radius: 5px;
+
+    &:focus {
+      border: 1px solid theme("colors.primary.300");
+      outline: none;
+    }
+  }
+}
+
+.react-datepicker-error {
+  border: 1px solid theme("colors.errors.600") !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__current-month {
+  font-family: theme("fontFamily.proximaNova");
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  font-style: normal;
+  color: theme("colors.neutral.700") !important;
+}
+
+.react-datepicker__header {
+  background-color: theme("colors.general.white") !important;
+  border-bottom: 1px solid theme("colors.neutral.100") !important;
+  margin-left: 30px !important;
+  margin-right: 30px !important;
+  padding-bottom: 10px !important;
+}
+
+.react-datepicker__current-month {
+  padding-bottom: 10px !important;
+}
+
+.react-datepicker__triangle {
+  display: none;
+  visibility: hidden;
+  background-color: red !important;
+  color: red !important;
+  border-color: red !important;
+}
+
+.react-datepicker__month-container {
+  font-family: theme("fontFamily.proximaNova");
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.03);
+  width: 280px;
+  height: auto;
+  padding-bottom: 10px;
+
+}
+
+.react-datepicker__day {
+  font-family: theme("fontFamily.proximaNova");
+  font-size: 12px;
+  padding: 2px;
+
+  .react-datepicker__day--selected {
+    background-color: red;
+  }
+  &--keyboard-selected,
+  &--selected {
+    border-radius: 5px !important;
+    background: theme("colors.primary.500") !important;
+    color: white !important;
+  }
+}
