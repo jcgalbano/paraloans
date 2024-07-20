@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
