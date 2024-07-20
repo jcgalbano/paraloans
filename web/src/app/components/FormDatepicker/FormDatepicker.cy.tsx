@@ -1,5 +1,5 @@
 import { mount } from "cypress/react18";
-import { FormDatepicker } from "./FormDatepicker"; // Adjust the import path as necessary
+import { FormDatepicker } from "./FormDatepicker";
 import { FormLoanWrapper } from "@/../cypress/components/FormLoanWrapper";
 
 describe("FormDatepicker Component", () => {

@@ -7,21 +7,19 @@ import { FormNextProps } from "./FormNext.types";
 export const FormNext = ({ nextLink }: FormNextProps) => {
   const router = useRouter();
 
-  const onSubmit = (data: any) => {
-    if (nextLink) {
-      router.push(nextLink);
-      return;
-    }
+  const onSubmit = () => {
+    trigger().then((isValid) => {
+      if (isValid) {
+        router.push(nextLink);
 
-    console.log(data);
+        console.log(getValues());
+      } else {
+        return;
+      }
+    });
   };
 
-  const { handleSubmit } = useFormContext();
+  const { trigger, getValues } = useFormContext();
 
-  return (
-    <PrimaryButton
-      content="Continue"
-      callback={handleSubmit(onSubmit)}
-    ></PrimaryButton>
-  );
+  return <PrimaryButton content="Continue" callback={onSubmit}></PrimaryButton>;
 };

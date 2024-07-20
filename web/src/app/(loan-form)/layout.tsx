@@ -1,15 +1,17 @@
 "use client";
 import { Suspense } from "react";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { FormFooter } from "@/app/components/FormFooter";
+import { FormBack } from "@/app/components/FormBack";
+import { FormNext } from "@/app/components/FormNext";
 import { NavbarAlt } from "@/app/components/NavbarAlt";
 
-import { FormValues } from "@/app/types/loanFormTypes";
-import { schema } from "@/app/schemas/loanFormSchema";
+import { routeMap } from "./config";
 
 import SidebarImg from "/public/sidebar-img.jpg";
 
@@ -20,8 +22,14 @@ export default function LoanFormLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const methods = useForm<FormValues>({
-    resolver: yupResolver(schema),
+  const currentPath = usePathname();
+  const currentSchema = routeMap[currentPath].schema;
+
+  const prevPath = routeMap[currentPath].previous;
+  const nextPath = routeMap[currentPath].next;
+
+  const methods = useForm({
+    resolver: yupResolver(currentSchema),
     mode: "all",
   });
 
@@ -43,10 +51,13 @@ export default function LoanFormLayout({
                 alt="sidebar img"
               />
               <div className="w-full flex flex-col">
-                <div className="w-full h-[97vh] flex justify-center pt-[150px] p-8 2sm:pl-12 2sm:justify-start">
+                <div className="w-full h-[97vh] flex flex-col justify-center pt-[150px] p-8 2sm:pl-12 2sm:justify-start">
                   {children}
+                  <div className="flex space-x-5">
+                    {prevPath && <FormBack prevLink={prevPath} />}
+                    {nextPath && <FormNext nextLink={nextPath} />}
+                  </div>
                 </div>
-                <FormFooter />
               </div>
             </div>
           </div>

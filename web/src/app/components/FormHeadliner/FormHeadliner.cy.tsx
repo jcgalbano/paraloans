@@ -1,5 +1,5 @@
 import { mount } from "cypress/react18";
-import { FormHeadliner } from "./FormHeadliner"; // Adjust the import path as necessary
+import { FormHeadliner } from "./FormHeadliner";
 
 describe("FormHeadliner Component", () => {
   it("should render the text and subtext correctly", () => {

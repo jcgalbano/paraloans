@@ -1,11 +1,11 @@
-import { FormTextFieldProps } from "./FormTextField.types";
+import { FormTextAreaProps } from "./FormTextArea.types";
 import { FieldValues, useFormContext, Path } from "react-hook-form";
 
-export const FormTextField = <FormObj extends FieldValues>({
+export const FormTextArea = <FormObj extends FieldValues>({
   field,
   label,
   required,
-}: FormTextFieldProps<FormObj>) => {
+}: FormTextAreaProps<FormObj>) => {
   const { register, clearErrors, formState, setValue } = useFormContext();
 
   const handleInputChange = (field: Path<FormObj>, value: string) => {
@@ -25,14 +25,13 @@ export const FormTextField = <FormObj extends FieldValues>({
         {label}
         {required && <span className="text-errors-600 pl-1">*</span>}
       </label>
-      <input
-        className={`form-loan-input font-proximaNova shadow appearance-none border rounded-rounded5px
+      <textarea
+        className={`form-loan-textarea resize-none font-proximaNova shadow appearance-none border rounded-rounded5px
         w-full py-2 px-3 text-neutral-800 leading-tight
         focus:border-primary-300 focus:outline-none
         ${formState.errors[field] ? "border-errors-600" : ""}
         `}
         id={field}
-        type="text"
         {...register(field)}
         onChange={(e) => handleInputChange(field, e.target.value)}
       />
