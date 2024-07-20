@@ -32,7 +32,7 @@ export const FormDatepicker = <FormObj extends FieldValues>({
       </label>
 
       <DatePicker
-        className={`${formState.errors[field] && "react-datepicker-error"}`}
+        className={`${formState.errors[field] ? "react-datepicker-error" : ""}`}
         dateFormat="dd/MM/yyyy"
         placeholderText="DD/MM/YYYY"
         showIcon={true}
@@ -44,7 +44,7 @@ export const FormDatepicker = <FormObj extends FieldValues>({
         }}
       />
       {formState.errors[field] && (
-        <p className="font-proximaNova text-base text-errors-600">
+        <p className="error-text font-proximaNova text-base text-errors-600">
           {formState.errors[field]?.message as string}
         </p>
       )}
