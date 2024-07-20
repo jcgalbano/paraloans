@@ -12,7 +12,7 @@ const PersonalDetails: NextPage = () => {
   const subheading: string = "Tell us about yourself first";
 
   return (
-    <form>
+    <form className="w-auto sm:w-[500px]">
       <FormHeadliner text={headline} subtext={subheading} />
       <FormTextField field="firstName" label="First Name" required={true} />
       <FormTextField field="lastName" label="Last Name" required={true} />
@@ -21,7 +21,6 @@ const PersonalDetails: NextPage = () => {
         label="Date of Birth"
         required={true}
       />
-      <FormNext nextLink="/contact-details" />
     </form>
   );
 };
