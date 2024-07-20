@@ -18,6 +18,7 @@ const contactSchemaShape = {
     .string()
     .matches(phoneRegExp, "Please enter a valid phone number.")
     .required("Mobile number is required."),
+  address: yup.string().required("Address is required."),
 };
 
 export const personalSchema = yup.object().shape(personalSchemaShape);

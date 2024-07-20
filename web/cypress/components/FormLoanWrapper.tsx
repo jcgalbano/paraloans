@@ -13,6 +13,7 @@ const validationSchema = yup.object().shape({
     .string()
     .matches(phoneRegExp, "Please enter a valid phone number.")
     .required("Mobile number is required."),
+  address: yup.string().required("Address is required."),
 });
 
 export const FormLoanWrapper = ({ children }: { children?: ReactNode }) => {

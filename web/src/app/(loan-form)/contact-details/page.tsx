@@ -5,6 +5,7 @@ import { NextPage } from "next";
 import { FormHeadliner } from "@/app/components/FormHeadliner";
 import { FormPhoneField } from "@/app/components/FormPhoneField";
 import { FormTextField } from "@/app/components/FormTextField";
+import { FormTextArea } from "@/app/components/FormTextArea";
 
 const ContactDetails: NextPage = () => {
   const headline: string = "Contact Details";
@@ -20,6 +21,7 @@ const ContactDetails: NextPage = () => {
         countryFormat="au"
         required={true}
       />
+      <FormTextArea field="address" label="Address" required={true} />
     </form>
   );
 };
