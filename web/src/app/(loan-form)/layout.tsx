@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import Image from "next/image";
 
 import { FormProvider, useForm } from "react-hook-form";
@@ -27,7 +28,9 @@ export default function LoanFormLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/qrl5ogo.css" />
+        <Suspense>
+          <link rel="stylesheet" href="https://use.typekit.net/qrl5ogo.css" />
+        </Suspense>
       </head>
       <body>
         <FormProvider {...methods}>
