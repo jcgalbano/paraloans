@@ -14,7 +14,7 @@ import SidebarImg from "/public/sidebar-img.jpg";
 
 import "@/app/globals.scss";
 
-export default function RootLayout({
+export default function LoanFormLayout({
   children,
 }: {
   children: React.ReactNode;
