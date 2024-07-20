@@ -26,10 +26,10 @@ export const FormTextField = <FormObj extends FieldValues>({
         {required && <span className="text-errors-600 pl-1">*</span>}
       </label>
       <input
-        className={`font-proximaNova shadow appearance-none border rounded-rounded5px
+        className={`form-loan-input font-proximaNova shadow appearance-none border rounded-rounded5px
         w-full py-2 px-3 text-neutral-800 leading-tight
         focus:border-primary-300 focus:outline-none
-        ${formState.errors[field] && "border-errors-600"}
+        ${formState.errors[field] ? "border-errors-600" : ""}
         `}
         id={label}
         type="text"
@@ -37,7 +37,7 @@ export const FormTextField = <FormObj extends FieldValues>({
         onChange={(e) => handleInputChange(field, e.target.value)}
       />
       {formState.errors[field] && (
-        <p className="font-proximaNova text-base text-errors-600">
+        <p className="error-text font-proximaNova text-base text-errors-600">
           {formState.errors[field]?.message as string}
         </p>
       )}
