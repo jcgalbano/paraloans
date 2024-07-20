@@ -32,7 +32,9 @@ export const FormDatepicker = <FormObj extends FieldValues>({
       </label>
 
       <DatePicker
-        className={`${formState.errors[field] ? "react-datepicker-error" : ""}`}
+        className={`${field}-date ${
+          formState.errors[field] ? "react-datepicker-error" : ""
+        }`}
         dateFormat="dd/MM/yyyy"
         placeholderText="DD/MM/YYYY"
         showIcon={true}
