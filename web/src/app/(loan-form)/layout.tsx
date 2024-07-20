@@ -42,11 +42,13 @@ export default function LoanFormLayout({
                 src={SidebarImg}
                 alt="sidebar img"
               />
-              <div className="w-full h-screen flex justify-center pt-[150px] p-8 2sm:pl-12 2sm:justify-start">
-                {children}
+              <div className="w-full flex flex-col">
+                <div className="w-full h-[97vh] flex justify-center pt-[150px] p-8 2sm:pl-12 2sm:justify-start">
+                  {children}
+                </div>
+                <FormFooter />
               </div>
             </div>
-            <FormFooter />
           </div>
         </FormProvider>
       </body>
