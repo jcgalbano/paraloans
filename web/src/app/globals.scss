@@ -93,3 +93,58 @@
     color: white !important;
   }
 }
+
+// Phone Input Styles Overwrites
+
+.react-tel-input {
+  input {
+    font-family: theme("fontFamily.proximaNova") !important;
+    color: theme("colors.neutral.800") !important;
+    width: 100% !important;
+    height: 40px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-left: 70px !important;
+    border: 1px solid theme("colors.neutral.100") !important;
+    border-radius: 5px !important;
+
+    &:focus {
+      border: 1px solid theme("colors.primary.300") !important;
+      outline: none;
+    }
+  }
+
+  .selected-flag {
+    width: 50px !important;
+  }
+
+  .flag-dropdown {
+    .selected-flag {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 0 !important;
+
+      &:focus {
+        border: 1px solid theme("colors.primary.300") !important;
+        outline: none;
+      }
+    }
+
+    background-color: theme("colors.general.white") !important;
+    border: 1px solid theme("colors.neutral.100") !important;
+    border-radius: 5px !important;
+  }
+}
+
+.country-list {
+  font-family: theme("fontFamily.proximaNova") !important;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.03) !important;
+}
+
+.phonefield-error {
+  input {
+    border: 1px solid theme("colors.errors.600") !important;
+    border-radius: 5px !important;
+  }
+}
