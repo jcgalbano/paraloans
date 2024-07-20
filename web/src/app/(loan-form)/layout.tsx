@@ -8,7 +8,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { FormBack } from "@/app/components/FormBack";
-import { FormFooter } from "@/app/components/FormFooter";
 import { FormNext } from "@/app/components/FormNext";
 import { NavbarAlt } from "@/app/components/NavbarAlt";
 
@@ -59,7 +58,6 @@ export default function LoanFormLayout({
                     {nextPath && <FormNext nextLink={nextPath} />}
                   </div>
                 </div>
-                <FormFooter />
               </div>
             </div>
           </div>
