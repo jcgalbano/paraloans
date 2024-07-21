@@ -18,7 +18,7 @@ export const FormCurrencyField = ({
   };
 
   return (
-    <div>
+    <div className="mb-7">
       <label
         className="font-proximaNova text-base block
       text-neutral-800 text-sm font-semibold font-base mb-2"

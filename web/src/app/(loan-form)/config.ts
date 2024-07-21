@@ -3,6 +3,7 @@ import {
   personalSchema,
   contactSchema,
   workSchema,
+  loanFormSchema,
 } from "@/app/schemas/loanFormSchema";
 
 export const routeMap: RouteMap = {
@@ -20,5 +21,10 @@ export const routeMap: RouteMap = {
     previous: "/contact-details",
     next: "/loan-details",
     schema: workSchema,
+  },
+  "/loan-details": {
+    previous: "/work-details",
+    next: "/loan-offers",
+    schema: loanFormSchema,
   },
 };

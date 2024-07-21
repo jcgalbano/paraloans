@@ -41,9 +41,32 @@ const unemployedSchemaShape = {
   annualIncome: yup.string().required("Annual income is required."),
 };
 
+const loanSchemaShape = {
+  price: yup
+    .string()
+    .required("Project/Item price is required.")
+    .test(
+      "is-above-2000",
+      "The project/item price must be at least $2000 AUD.",
+      (value) => {
+        const numberValue = parseFloat(value);
+        return !isNaN(numberValue) && numberValue >= 2000;
+      }
+    )
+    .test(
+      "is-below-1000000",
+      "The project/item price exceeds the $1,000,000 limit.",
+      (value) => {
+        const numberValue = parseFloat(value);
+        return !isNaN(numberValue) && numberValue <= 1000000;
+      }
+    ),
+};
+
 export const personalSchema = yup.object().shape(personalSchemaShape);
 export const contactSchema = yup.object().shape(contactSchemaShape);
 export const workSchema = yup.object().shape(workSchemaShape);
 export const employedSchema = yup.object().shape(employedSchemaShape);
 export const selfEmployedSchema = yup.object().shape(selfEmployedSchemaShape);
 export const unemployedSchema = yup.object().shape(unemployedSchemaShape);
+export const loanFormSchema = yup.object().shape(loanSchemaShape);
