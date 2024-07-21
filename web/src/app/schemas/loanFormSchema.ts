@@ -61,6 +61,24 @@ const loanSchemaShape = {
         return !isNaN(numberValue) && numberValue <= 1000000;
       }
     ),
+  deposit: yup
+    .string()
+    .required("Deposit is required.")
+    .test(
+      "is-not-above-price",
+      "The deposit cannot be greater than the project/item price.",
+      function (value) {
+        const { price } = this.parent;
+        const priceValue = parseFloat(price);
+        const depositValue = parseFloat(value);
+
+        return (
+          !isNaN(depositValue) &&
+          !isNaN(priceValue) &&
+          depositValue <= priceValue
+        );
+      }
+    ),
 };
 
 export const personalSchema = yup.object().shape(personalSchemaShape);
