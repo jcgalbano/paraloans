@@ -79,6 +79,7 @@ const loanSchemaShape = {
         );
       }
     ),
+  loanPurpose: yup.string().required("Loan purpose is required."),
 };
 
 export const personalSchema = yup.object().shape(personalSchemaShape);

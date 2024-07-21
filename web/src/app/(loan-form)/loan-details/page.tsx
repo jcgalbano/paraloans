@@ -2,6 +2,7 @@
 
 import { FormCurrencyField } from "@/app/components/FormCurrencyField";
 import { FormHeadliner } from "@/app/components/FormHeadliner";
+import { FormSelectField } from "@/app/components/FormSelectField";
 import { NextPage } from "next";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -9,8 +10,7 @@ import { useFormContext } from "react-hook-form";
 const LoanDetails: NextPage = () => {
   const headline: string = "Loan Details";
   const subheading: string = "Provide specifics about your desired loan";
-  const { watch, trigger, formState } = useFormContext();
-  const { isDirty, dirtyFields } = formState;
+  const { watch, trigger } = useFormContext();
   const price = watch("price");
   const deposit = watch("deposit");
 
@@ -39,6 +39,26 @@ const LoanDetails: NextPage = () => {
           field="deposit"
           label="Deposit (AUD)"
           required={true}
+        />
+        <FormSelectField
+          field="loanPurpose"
+          label="Loan Purpose"
+          required={true}
+          options={[
+            "Debt Consolidation",
+            "Car",
+            "Home Improvements",
+            "Holiday",
+            "Wedding",
+            "Repairs",
+            "Moving Costs",
+            "Rental Bond",
+            "Pay Utility Bills",
+            "Pay Fees (eg. uni fees, childcare etc.)",
+            "Solar Battery",
+            "Medical",
+            "Other",
+          ]}
         />
       </div>
     </form>
