@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { FormBackProps } from "./FormBack.types";
 import { TextButton } from "../shared/TextButton";
 
-export const FormBack = ({ prevLink }: FormBackProps) => {
+export const FormBack = ({ content, prevLink }: FormBackProps) => {
   const router = useRouter();
 
   const onSubmit = () => {
@@ -15,5 +15,5 @@ export const FormBack = ({ prevLink }: FormBackProps) => {
 
   const { getValues } = useFormContext();
 
-  return <TextButton content="Back" callback={onSubmit}></TextButton>;
+  return <TextButton content={content} callback={onSubmit}></TextButton>;
 };

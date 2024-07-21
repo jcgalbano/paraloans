@@ -66,7 +66,7 @@ const config: Config = {
         destructive: { "300": "#f36356", "400": "#e44629" },
       },
       screens: {
-        xs: "400px",
+        xs: "390px",
         "2sm": "900px",
         "3xl": "1700px",
         "4xl": "1920px",

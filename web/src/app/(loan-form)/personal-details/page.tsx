@@ -5,7 +5,6 @@ import { NextPage } from "next";
 import { FormDatepicker } from "../../components/FormDatepicker";
 import { FormHeadliner } from "../../components/FormHeadliner";
 import { FormTextField } from "../../components/FormTextField";
-import { FormNext } from "../../components/FormNext";
 
 const PersonalDetails: NextPage = () => {
   const headline: string = "Let's find your perfect loan match";
