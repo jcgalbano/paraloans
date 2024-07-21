@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { PrimaryButton } from "../shared/PrimaryButton";
 import { FormNextProps } from "./FormNext.types";
 
-export const FormNext = ({ nextLink }: FormNextProps) => {
+export const FormNext = ({ content, nextLink }: FormNextProps) => {
   const router = useRouter();
 
   const onSubmit = () => {
@@ -21,5 +21,5 @@ export const FormNext = ({ nextLink }: FormNextProps) => {
 
   const { trigger, getValues } = useFormContext();
 
-  return <PrimaryButton content="Continue" callback={onSubmit}></PrimaryButton>;
+  return <PrimaryButton content={content} callback={onSubmit}></PrimaryButton>;
 };
