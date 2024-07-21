@@ -8,10 +8,15 @@ export const FormSelectCard = ({
   label,
   desc,
 }: FormSelectCardProps) => {
-  const { setValue, register, watch, formState } = useFormContext();
+  const { setValue, register, watch, formState, clearErrors } =
+    useFormContext();
   const isSelected = watch(field) === label;
 
   const handleInputChange = (field: string) => {
+    if (formState.errors[field]) {
+      clearErrors(field);
+    }
+
     if (isSelected) {
       setValue(field, "");
     } else {

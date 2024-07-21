@@ -28,16 +28,17 @@ const workSchemaShape = {
 const employedSchemaShape = {
   employmentStatus: yup.string().required("Employment status is required."),
   employerName: yup.string().required("Employer name is required."),
+  annualIncome: yup.string().required("Annual income is required."),
 };
 
 const selfEmployedSchemaShape = {
   employmentStatus: yup.string().required("Employment status is required."),
-  // annualIncome
+  annualIncome: yup.string().required("Annual income is required."),
 };
 
 const unemployedSchemaShape = {
   employmentStatus: yup.string().required("Employment status is required."),
-  // annualIncome
+  annualIncome: yup.string().required("Annual income is required."),
 };
 
 export const personalSchema = yup.object().shape(personalSchemaShape);
