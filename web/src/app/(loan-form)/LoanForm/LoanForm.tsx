@@ -28,7 +28,12 @@ export const LoanForm = ({ children }: { children: ReactNode }) => {
       {children}
       <div className="flex space-x-5">
         {prevPath && <FormBack content="Back" prevLink={prevPath} />}
-        {nextPath && <FormNext content="Continue" nextLink={nextPath} />}
+        {nextPath && (
+          <FormNext
+            content={currentPath === "/loan-details" ? "Submit" : "Continue"}
+            nextLink={nextPath}
+          />
+        )}
       </div>
     </FormProvider>
   );

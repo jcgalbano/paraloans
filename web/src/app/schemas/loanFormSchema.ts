@@ -6,7 +6,29 @@ const phoneRegExp =
 const personalSchemaShape = {
   firstName: yup.string().required("First name is required."),
   lastName: yup.string().required("Last name is required."),
-  dateOfBirth: yup.date().required("Date of birth is required."),
+  dateOfBirth: yup
+    .date()
+    .required("Date of birth is required.")
+    .test(
+      "computed-age-should-be-more-than-18",
+      "You must be at least 18 years old to apply. Please enter a valid date of birth.",
+      (dateOfBirth) => {
+        const today = new Date();
+        const birthDate = new Date(dateOfBirth);
+
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+
+        if (
+          monthDifference < 0 ||
+          (monthDifference === 0 && today.getDate() < birthDate.getDate())
+        ) {
+          age--;
+        }
+
+        return age >= 18;
+      }
+    ),
 };
 
 const contactSchemaShape = {
@@ -41,9 +63,66 @@ const unemployedSchemaShape = {
   annualIncome: yup.string().required("Annual income is required."),
 };
 
+const loanSchemaShape = {
+  price: yup
+    .string()
+    .required("Project/Item price is required.")
+    .test(
+      "is-above-2000",
+      "The project/item price must be at least $2000 AUD.",
+      (value) => {
+        const numberValue = parseFloat(value);
+        return !isNaN(numberValue) && numberValue >= 2000;
+      }
+    )
+    .test(
+      "is-below-1000000",
+      "The project/item price exceeds the $1,000,000 limit.",
+      (value) => {
+        const numberValue = parseFloat(value);
+        return !isNaN(numberValue) && numberValue <= 1000000;
+      }
+    ),
+  deposit: yup
+    .string()
+    .required("Deposit is required.")
+    .test(
+      "is-not-above-price",
+      "The deposit cannot be greater than the project/item price.",
+      function (value) {
+        const { price } = this.parent;
+        const priceValue = parseFloat(price);
+        const depositValue = parseFloat(value);
+
+        return (
+          !isNaN(depositValue) &&
+          !isNaN(priceValue) &&
+          depositValue <= priceValue
+        );
+      }
+    )
+    .test(
+      "price-deposit-greater-than-200",
+      "The Project/Item price minus the deposit must be greater than $2000 AUD",
+      function (value) {
+        const { price } = this.parent;
+        const priceValue = parseFloat(price);
+        const depositValue = parseFloat(value);
+
+        return (
+          !isNaN(depositValue) &&
+          !isNaN(priceValue) &&
+          priceValue - depositValue > 2000
+        );
+      }
+    ),
+  loanPurpose: yup.string().required("Loan purpose is required."),
+};
+
 export const personalSchema = yup.object().shape(personalSchemaShape);
 export const contactSchema = yup.object().shape(contactSchemaShape);
 export const workSchema = yup.object().shape(workSchemaShape);
 export const employedSchema = yup.object().shape(employedSchemaShape);
 export const selfEmployedSchema = yup.object().shape(selfEmployedSchemaShape);
 export const unemployedSchema = yup.object().shape(unemployedSchemaShape);
+export const loanFormSchema = yup.object().shape(loanSchemaShape);
