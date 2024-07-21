@@ -8,6 +8,10 @@ interface RouteConfig {
   schema: Schema;
 }
 
+export interface SchemaMap {
+  [employ: string]: Schema;
+}
+
 export interface RouteMap {
   [route: string]: RouteConfig;
 }

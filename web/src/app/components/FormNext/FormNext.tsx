@@ -9,7 +9,7 @@ export const FormNext = ({ nextLink }: FormNextProps) => {
 
   const onSubmit = () => {
     trigger().then((isValid) => {
-      if (isValid) {
+      if (nextLink && isValid) {
         router.push(nextLink);
 
         console.log(getValues());

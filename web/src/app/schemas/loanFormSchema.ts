@@ -21,5 +21,28 @@ const contactSchemaShape = {
   address: yup.string().required("Address is required."),
 };
 
+const workSchemaShape = {
+  employmentStatus: yup.string().required("Employment status is required."),
+};
+
+const employedSchemaShape = {
+  employmentStatus: yup.string().required("Employment status is required."),
+  employerName: yup.string().required("Employer name is required."),
+};
+
+const selfEmployedSchemaShape = {
+  employmentStatus: yup.string().required("Employment status is required."),
+  // annualIncome
+};
+
+const unemployedSchemaShape = {
+  employmentStatus: yup.string().required("Employment status is required."),
+  // annualIncome
+};
+
 export const personalSchema = yup.object().shape(personalSchemaShape);
 export const contactSchema = yup.object().shape(contactSchemaShape);
+export const workSchema = yup.object().shape(workSchemaShape);
+export const employedSchema = yup.object().shape(employedSchemaShape);
+export const selfEmployedSchema = yup.object().shape(selfEmployedSchemaShape);
+export const unemployedSchema = yup.object().shape(unemployedSchemaShape);

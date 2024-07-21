@@ -1,5 +1,9 @@
 import { RouteMap } from "@/app/types/loanFormTypes";
-import { personalSchema, contactSchema } from "@/app/schemas/loanFormSchema";
+import {
+  personalSchema,
+  contactSchema,
+  workSchema,
+} from "@/app/schemas/loanFormSchema";
 
 export const routeMap: RouteMap = {
   "/personal-details": {
@@ -11,5 +15,10 @@ export const routeMap: RouteMap = {
     previous: "/personal-details",
     next: "/work-details",
     schema: contactSchema,
+  },
+  "/work-details": {
+    previous: "/contact-details",
+    next: "/loan-details",
+    schema: workSchema,
   },
 };
