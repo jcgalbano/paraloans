@@ -6,7 +6,29 @@ const phoneRegExp =
 const personalSchemaShape = {
   firstName: yup.string().required("First name is required."),
   lastName: yup.string().required("Last name is required."),
-  dateOfBirth: yup.date().required("Date of birth is required."),
+  dateOfBirth: yup
+    .date()
+    .required("Date of birth is required.")
+    .test(
+      "computed-age-should-be-more-than-18",
+      "You must be at least 18 years old to apply. Please enter a valid date of birth.",
+      (dateOfBirth) => {
+        const today = new Date();
+        const birthDate = new Date(dateOfBirth);
+
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+
+        if (
+          monthDifference < 0 ||
+          (monthDifference === 0 && today.getDate() < birthDate.getDate())
+        ) {
+          age--;
+        }
+
+        return age >= 18;
+      }
+    ),
 };
 
 const contactSchemaShape = {
@@ -76,6 +98,21 @@ const loanSchemaShape = {
           !isNaN(depositValue) &&
           !isNaN(priceValue) &&
           depositValue <= priceValue
+        );
+      }
+    )
+    .test(
+      "price-deposit-greater-than-200",
+      "The Project/Item price minus the deposit must be greater than $2000 AUD",
+      function (value) {
+        const { price } = this.parent;
+        const priceValue = parseFloat(price);
+        const depositValue = parseFloat(value);
+
+        return (
+          !isNaN(depositValue) &&
+          !isNaN(priceValue) &&
+          priceValue - depositValue > 2000
         );
       }
     ),
