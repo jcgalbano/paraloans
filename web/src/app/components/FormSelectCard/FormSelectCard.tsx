@@ -28,6 +28,7 @@ export const FormSelectCard = ({
     <div
       className={`form-select-card cursor-pointer inline-flex h-[160px] font-proximaNova flex flex-col justify-center items-center
       space-y-1  rounded-rounded5px pt-[32px] pb-[32px] pl-[24px] pr-[24px] m-1
+      hover:border-neutral-400
       border ${isSelected ? "border-primary-500" : "border-neutral-100"}`}
       {...register}
       onClick={() => {
