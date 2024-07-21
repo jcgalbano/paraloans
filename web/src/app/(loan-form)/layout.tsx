@@ -46,12 +46,12 @@ export default function LoanFormLayout({
             <NavbarAlt />
             <div className="flex">
               <Image
-                className="h-screen w-auto hidden 2sm:block z-1"
+                className="h-screen w-1/10 hidden 2sm:block z-1"
                 src={SidebarImg}
                 alt="sidebar img"
               />
-              <div className="w-full flex flex-col">
-                <div className="w-full h-[97vh] flex flex-col justify-center pt-[150px] p-8 2sm:pl-12 2sm:justify-start">
+              <div className="w-2/3 flex flex-col">
+                <div className="w-auto 2sm:w-2/3 h-screen flex flex-col justify-center pl-10 pt-[50vh] xs:pt-[200px] 2sm:justify-start">
                   {children}
                   <div className="flex space-x-5">
                     {prevPath && <FormBack prevLink={prevPath} />}
