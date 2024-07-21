@@ -7,7 +7,7 @@ export const FormSelectField = ({
   required,
   options,
 }: FormSelectFieldProps) => {
-  const { clearErrors, formState, setValue, trigger } = useFormContext();
+  const { formState, setValue, trigger } = useFormContext();
 
   const handleInputChange = (field: string, value: string | undefined) => {
     setValue(field, value as any);

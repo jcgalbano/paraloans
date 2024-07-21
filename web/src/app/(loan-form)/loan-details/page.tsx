@@ -6,6 +6,7 @@ import { FormSelectField } from "@/app/components/FormSelectField";
 import { NextPage } from "next";
 import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
+import { FormSlider } from "@/app/components/FormSlider";
 
 const LoanDetails: NextPage = () => {
   const headline: string = "Loan Details";
@@ -59,6 +60,15 @@ const LoanDetails: NextPage = () => {
             "Medical",
             "Other",
           ]}
+        />
+        <FormSlider
+          field="loanTerm"
+          label="Loan Term (years)"
+          required={true}
+          minVal={1}
+          maxVal={7}
+          defaultVal={5}
+          marks={{ 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7 }}
         />
       </div>
     </form>
