@@ -1,0 +1,34 @@
+{
+  "all": [
+    {
+      "name": "Lender A",
+      "annualPR": 0.055,
+      "appFee": 15
+    },
+    {
+      "name": "Lender B",
+      "annualPR": 0.05,
+      "appFee": 15
+    },
+    {
+      "name": "Lender C",
+      "annualPR": 0.06,
+      "appFee": 0
+    },
+    {
+      "name": "Lender D",
+      "annualPR": 0.022,
+      "appFee": 30
+    },
+    {
+      "name": "Lender E",
+      "annualPR": 0.055,
+      "appFee": 15
+    },
+    {
+      "name": "Lender F",
+      "annualPR": 0.06,
+      "appFee": 10
+    }
+  ]
+}
