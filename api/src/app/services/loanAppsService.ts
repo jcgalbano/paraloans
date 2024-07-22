@@ -1,12 +1,12 @@
 import BigNumber from "bignumber.js";
-import Lender from "../../../data/lender.json";
+import Lender from "../models/lender";
 
 export const calcLoanOffers = (
   totalValue: number,
   deposit: number,
   loanYears: number
 ) => {
-  const loanOffers = Lender.all.map((lender) => {
+  const loanOffers = Lender.all().map((lender) => {
     return {
       name: lender.name,
       annualPR: lender.annualPR,
