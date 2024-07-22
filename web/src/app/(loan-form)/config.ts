@@ -27,4 +27,9 @@ export const routeMap: RouteMap = {
     next: "/loan-offers",
     schema: loanFormSchema,
   },
+  "/loan-offers": {
+    previous: "/loan-details",
+    next: null,
+    schema: loanFormSchema,
+  },
 };
