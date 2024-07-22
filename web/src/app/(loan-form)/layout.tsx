@@ -28,7 +28,8 @@ export default function LoanFormLayout({
           <NavbarAlt />
           <div className="flex">
             <Image
-              className="h-screen w-1/10 hidden 2sm:block z-1"
+              priority
+              className="h-auto w-1/10 hidden 2sm:block z-1"
               src={SidebarImg}
               alt="sidebar img"
             />
