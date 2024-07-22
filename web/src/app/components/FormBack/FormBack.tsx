@@ -9,11 +9,7 @@ export const FormBack = ({ content, prevLink }: FormBackProps) => {
 
   const onSubmit = () => {
     router.push(prevLink);
-
-    console.log(getValues());
   };
-
-  const { getValues } = useFormContext();
 
   return <TextButton content={content} callback={onSubmit}></TextButton>;
 };

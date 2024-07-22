@@ -30,7 +30,7 @@ export const FormCurrencyField = ({
       <CurrencyInput
         id={field}
         className={`form-loan-input font-proximaNova shadow appearance-none rounded-rounded5px
-        w-full py-2 px-3 text-neutral-800 leading-tight
+        w-full py-2 px-3 text-neutral-800 leading-tight shadow-none
         focus:border-primary-300 focus:outline-none border
         ${formState.errors[field] ? "border-errors-600" : ""}`}
         {...register(field)}

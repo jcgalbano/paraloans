@@ -36,3 +36,8 @@ web/.vercel
 # typescript
 web/*.tsbuildinfo
 web/next-env.d.ts
+
+# API
+
+# dependencies
+api/node_modules

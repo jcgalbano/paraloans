@@ -28,7 +28,7 @@ export const FormTextField = <FormObj extends FieldValues>({
       <input
         className={`form-loan-input font-proximaNova shadow appearance-none border rounded-rounded5px
         w-full py-2 px-3 text-neutral-800 leading-tight
-        focus:border-primary-300 focus:outline-none
+        focus:border-primary-300 focus:outline-none shadow-none
         ${formState.errors[field] ? "border-errors-600" : ""}
         `}
         id={field}

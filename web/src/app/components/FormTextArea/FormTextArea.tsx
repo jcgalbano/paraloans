@@ -27,7 +27,7 @@ export const FormTextArea = <FormObj extends FieldValues>({
       </label>
       <textarea
         className={`form-loan-textarea resize-none font-proximaNova shadow appearance-none border rounded-rounded5px
-        w-full py-2 px-3 text-neutral-800 leading-tight
+        w-full py-2 px-3 text-neutral-800 leading-tight shadow-none
         focus:border-primary-300 focus:outline-none
         ${formState.errors[field] ? "border-errors-600" : ""}
         `}

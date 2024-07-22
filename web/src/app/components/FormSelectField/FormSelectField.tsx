@@ -7,7 +7,7 @@ export const FormSelectField = ({
   required,
   options,
 }: FormSelectFieldProps) => {
-  const { formState, setValue, trigger } = useFormContext();
+  const { formState, setValue, trigger, watch } = useFormContext();
 
   const handleInputChange = (field: string, value: string | undefined) => {
     setValue(field, value as any);
@@ -25,11 +25,12 @@ export const FormSelectField = ({
       </label>
       <select
         className={`form-loan-input font-proximaNova shadow appearance-none rounded-rounded5px
-        w-full py-2 px-3 text-neutral-800 leading-tight
+        w-full py-2 px-3 text-neutral-800 leading-tight shadow-none
         focus:border-primary-300 focus:outline-none border
         ${formState.errors[field] ? "border-errors-600" : ""}`}
         name={field}
         id={field}
+        value={watch(field) || ""}
         onChange={(e) => handleInputChange(field, e.target.value)}
         onBlur={() => trigger(field)}
       >
