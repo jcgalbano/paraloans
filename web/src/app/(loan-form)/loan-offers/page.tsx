@@ -9,12 +9,27 @@ import { LoanHead } from "@/app/components/LoanHead/LoanHead";
 import { LoanItem } from "@/app/components/LoanItem";
 import { SectionHeadline } from "@/app/components/shared/SectionHeadline";
 
-import sampleOutput from "@/../data/sample-output.json";
+import { useCallback, useEffect, useState } from "react";
+import { postLoanApplication } from "@/app/utils/api/loanForm";
 
 const LoanOffers: NextPage = () => {
   const { getValues } = useFormContext();
   const loanFormObj = getValues();
-  const loanOffers = sampleOutput["loanOffers"];
+  const [loanOffers, setLoanOffers] = useState([]);
+
+  const getLoanOffers = useCallback(async () => {
+    try {
+      const loanFormObj = await getValues();
+      const fetchedLoanOffers = await postLoanApplication(loanFormObj);
+      setLoanOffers(fetchedLoanOffers);
+    } catch (error) {
+      console.error("Failed to get loan offers:", error);
+    }
+  }, [getValues]);
+
+  useEffect(() => {
+    getLoanOffers();
+  }, [getLoanOffers]);
 
   return (
     <div className="w-full">
@@ -36,17 +51,17 @@ const LoanOffers: NextPage = () => {
       </div>
       <SectionHeadline content={"Best Loan Offers For You"} />
       <div className="w-full flex flex-row flex-wrap">
-        {loanOffers.map((loan) => (
-          <LoanCard
-            key={loan.name}
-            name={loan.name}
-            monthlyRepayment={loan.monthlyRepayment}
-            interestRate={loan.interestRate}
-            fees={loan.fees}
-          />
-        ))}
+        {loanOffers &&
+          loanOffers.map((loan) => (
+            <LoanCard
+              key={loan.name}
+              name={loan.name}
+              monthlyRepayment={loan.monthlyRepayment}
+              interestRate={loan.annualPR}
+              fees={loan.appFee}
+            />
+          ))}
       </div>
-      {JSON.stringify(loanFormObj)}
     </div>
   );
 };

@@ -10,8 +10,10 @@
   "author": "Jan Carlo Albano",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "bignumber.js": "^9.1.2",
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
