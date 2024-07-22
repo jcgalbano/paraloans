@@ -11,15 +11,13 @@ export const FormNext = ({ content, nextLink }: FormNextProps) => {
     trigger().then((isValid) => {
       if (nextLink && isValid) {
         router.push(nextLink);
-
-        console.log(getValues());
       } else {
         return;
       }
     });
   };
 
-  const { trigger, getValues } = useFormContext();
+  const { trigger } = useFormContext();
 
   return <PrimaryButton content={content} callback={onSubmit}></PrimaryButton>;
 };
