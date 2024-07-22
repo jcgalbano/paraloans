@@ -1,7 +1,7 @@
 # **Welcome to Paraloans!**
 A small loaning app demo built with Next.js and Express.js. Demonstrates a multi step form that's validated, sanitized, and meant to demonstrate the basics of loan application.
 
-Built using:
+**Built using:**
 
 `React 18`
 
@@ -10,6 +10,11 @@ Built using:
 `Node.js 22.4.1`
 
 `Express.js ^4.19.2`
+
+**Tested using:**
+
+`Cypress ^13.13.1` for some e2e and component tests.
+`Jest ^29.7.0` and `Supertest ^7.0.0` for some tests on the services and a request spec on the controller.
 
 Please make sure to have these fundamentals before you start with installation. 
 
