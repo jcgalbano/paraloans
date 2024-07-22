@@ -11,11 +11,15 @@ import { SectionHeadline } from "@/app/components/shared/SectionHeadline";
 
 import { useCallback, useEffect, useState } from "react";
 import { postLoanApplication } from "@/app/utils/api/loanForm";
+import { formatCurrency, formatRate } from "@/app/utils/formatters/numbers";
+
+import { LoanOffer } from "@/app/types/loanFormTypes";
 
 const LoanOffers: NextPage = () => {
   const { getValues } = useFormContext();
   const loanFormObj = getValues();
-  const [loanOffers, setLoanOffers] = useState([]);
+
+  const [loanOffers, setLoanOffers] = useState<LoanOffer[]>([]);
 
   const getLoanOffers = useCallback(async () => {
     try {
@@ -38,27 +42,41 @@ const LoanOffers: NextPage = () => {
         <div className="flex justify-center items-center mb-10 md:mb-0">
           <LoanHead
             headContent={"Loan Amount"}
-            content={"$12,000"}
+            content={formatCurrency(
+              Number(loanFormObj.price - loanFormObj.deposit)
+            )}
             footContent={"Project/Item Price - Deposit"}
           />
         </div>
         <div className="flex sm:flex-row flex-col justify-start sm:flex-wrap sm:items-center items-start">
-          <LoanItem headContent={"Project/Item Price"} content={"$14,000"} />
-          <LoanItem headContent={"Deposit"} content={"$2,000"} />
-          <LoanItem headContent={"Loan Purpose"} content={"Vacation"} />
-          <LoanItem headContent={"Loan Term"} content={"2 Years"} />
+          <LoanItem
+            headContent={"Project/Item Price"}
+            content={formatCurrency(Number(loanFormObj.price))}
+          />
+          <LoanItem
+            headContent={"Deposit"}
+            content={formatCurrency(Number(loanFormObj.deposit))}
+          />
+          <LoanItem
+            headContent={"Loan Purpose"}
+            content={loanFormObj.loanPurpose}
+          />
+          <LoanItem
+            headContent={"Loan Term"}
+            content={`${loanFormObj.loanTerm} Years`}
+          />
         </div>
       </div>
       <SectionHeadline content={"Best Loan Offers For You"} />
       <div className="w-full flex flex-row flex-wrap">
         {loanOffers &&
-          loanOffers.map((loan) => (
+          loanOffers.map((loan: LoanOffer) => (
             <LoanCard
               key={loan.name}
               name={loan.name}
-              monthlyRepayment={loan.monthlyRepayment}
-              interestRate={loan.annualPR}
-              fees={loan.appFee}
+              monthlyRepayment={formatCurrency(Number(loan.monthlyRepayment))}
+              interestRate={formatRate(loan.annualPR)}
+              fees={formatCurrency(loan.appFee)}
             />
           ))}
       </div>

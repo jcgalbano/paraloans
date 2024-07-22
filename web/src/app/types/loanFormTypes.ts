@@ -15,3 +15,10 @@ export interface SchemaMap {
 export interface RouteMap {
   [route: string]: RouteConfig;
 }
+
+export interface LoanOffer {
+  name: string;
+  monthlyRepayment: string;
+  annualPR: number;
+  appFee: number;
+}
