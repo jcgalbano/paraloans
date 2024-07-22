@@ -46,6 +46,7 @@ const LoanOffers: NextPage = () => {
           />
         ))}
       </div>
+      {JSON.stringify(loanFormObj)}
     </div>
   );
 };

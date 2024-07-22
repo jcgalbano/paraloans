@@ -1,4 +1,4 @@
-interface LoanAppData {
+interface LoanApplicationData {
   firstName: string;
   lastName: string;
   dateOfBirth: Date;
@@ -14,14 +14,16 @@ interface LoanAppData {
   loanPurpose: string;
 }
 
-const createApp = (loanApp: LoanAppData): LoanAppData => {
-  const loanApps = []; // STUB: LoanApps table in a DB
+const createApplication = (
+  loanApplication: LoanApplicationData
+): LoanApplicationData => {
+  const loanApplications = []; // STUB: LoanApps table in a DB
 
-  loanApps.push(loanApp);
+  loanApplications.push(loanApplication);
 
-  return loanApp;
+  return loanApplication;
 };
 
 export default {
-  createApp,
+  createApplication,
 };
