@@ -7,7 +7,7 @@ export const FormSelectField = ({
   required,
   options,
 }: FormSelectFieldProps) => {
-  const { formState, setValue, trigger } = useFormContext();
+  const { formState, setValue, trigger, watch } = useFormContext();
 
   const handleInputChange = (field: string, value: string | undefined) => {
     setValue(field, value as any);
@@ -30,6 +30,7 @@ export const FormSelectField = ({
         ${formState.errors[field] ? "border-errors-600" : ""}`}
         name={field}
         id={field}
+        value={watch(field) || ""}
         onChange={(e) => handleInputChange(field, e.target.value)}
         onBlur={() => trigger(field)}
       >
