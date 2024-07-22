@@ -18,14 +18,14 @@ Please make sure to have these fundamentals before you start with installation.
 1. Navigate to the root of the project using your terminal
 1. Then navigate to the web directory using `cd web`
 1. Install frontend dependencies using `npm install`
-1. Start the web using `npm run dev` and it should run on port `3001`.
-1. Open a chrome browser and pay a visit to `http://localhost:3001/` to start exploring.
+1. Start the web using `npm run dev` and it should run on port `3001`
+1. Open a chrome browser and pay a visit to `http://localhost:3001/`
 
 ### **Backend**
 1. Navigate to the root of the project using your terminal
 1. Then navigate to the api directory using `cd api`
 1. Install backend dependencies using `npm install`
-1. Start the web compoent using `npm run dev` and it should run on port `3000`.
+1. Start the api component using `npm run start` and it should run on port `3000`
 1. Do a test curl command to check if the api is running. Here's a very tiny curl command for you to run in the terminal:
 ```
 curl --location 'http://localhost:3000/api/loan-applications' \
