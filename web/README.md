@@ -6,31 +6,52 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+### **Language**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`Typescript ^5`   
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Framework
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`React 18.3.1`
 
-## Learn More
+app created using `create-next-app@14.2.5`
 
-To learn more about Next.js, take a look at the following resources:
+### React Framework
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`Next.js 14.2.5` - didn’t build it manually because:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Quick Setup**:
+    - **Fast and Easy**: Next.js provides a quick way to get started with React without worrying about configuration. Just one command (`npx create-next-app@latest my-app`), and you have a fully functioning React project.
+- **Best Practices**:
+    - **Built-In Best Practices**: Next.js sets up a project with industry best practices for structure, testing, and performance optimization.
+- **Tooling Integration**:
+    - **Integrated Tooling**: Next.js comes with Webpack, Babel, ESLint, Jest, and other tools pre-configured.
+    - **Development Server**: It includes a development server with hot reloading out of the box.
 
-## Deploy on Vercel
+### Linting and Formatting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`Eslint`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`Prettier (Local)`
+
+### State Management
+
+`Context API` - for state management
+
+
+### Form Libraries
+
+`react-hook-form` - for form states
+
+`yup` - for form schema validations
+
+### CSS Framework
+
+`SASS` - for some easy edits when I do use CSS
+
+`Tailwind` - made it easy to style the whole project
+
+### Testing
+
+`Cypress` -  cover form interactions, navigation, and data submission
