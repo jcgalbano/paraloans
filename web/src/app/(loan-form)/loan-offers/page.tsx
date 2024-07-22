@@ -17,7 +17,7 @@ const LoanOffers: NextPage = () => {
   const loanOffers = sampleOutput["loanOffers"];
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full">
       <SectionHeadline content={"Summary of Loan Details"} />
       <div className="flex flex-row flex-wrap justify-between mb-7">
         <div className="flex justify-center items-center mb-10 md:mb-0">
