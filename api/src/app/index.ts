@@ -8,6 +8,9 @@ import loanApplicationsRoutes from "./routes/loanApplicationsRoutes";
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
+// Uses CORS to explicitly state what our API accepts as the origin of the request
+// and the type of requests it can do and how that looks like.
+// just standard stuff but pretty powerful
 app.use(
   cors({
     origin: "http://localhost:3001",
@@ -16,7 +19,7 @@ app.use(
   })
 );
 
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: "10kb", extended: true }));
 
 // Routes
 app.use("/api", loanApplicationsRoutes);

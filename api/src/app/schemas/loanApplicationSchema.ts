@@ -3,7 +3,7 @@ import Joi from "joi";
 const loanApplicationSchema = Joi.object({
   firstName: Joi.string().min(2).max(30).required(),
   lastName: Joi.string().min(2).max(30).required(),
-  dateOfBirth: Joi.date().iso().required(),
+  dateOfBirth: Joi.date().required(),
   email: Joi.string().email().required(),
   phoneNumber: Joi.string()
     .pattern(
