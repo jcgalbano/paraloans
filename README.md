@@ -16,7 +16,9 @@ A small loaning app demo built with Next.js and Express.js. Demonstrates a multi
 `Cypress ^13.13.1` for some e2e and component tests.
 `Jest ^29.7.0` and `Supertest ^7.0.0` for some tests on the services and a request spec on the controller.
 
-Please make sure to have these fundamentals before you start with installation. 
+Please make sure to have these fundamentals before you start with installation.
+
+Also another README on the web directory. Good way to see the dependency matrix.
 
 ## **Installation Steps**
 ### **Frontend**
