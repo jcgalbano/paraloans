@@ -1,4 +1,5 @@
 # **Welcome to Paraloans!**
+![Screenshot 2024-07-23 at 5 24 13 AM](https://github.com/user-attachments/assets/8086d1d5-aa6e-4d49-9671-98b0ac4e3bcd)
 A small loaning app demo built with Next.js and Express.js. Demonstrates a multi step form that's validated, sanitized, and meant to demonstrate the basics of loan application.
 
 **Built using:**
