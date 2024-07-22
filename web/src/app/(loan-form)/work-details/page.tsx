@@ -32,8 +32,10 @@ const WorkDetails: NextPage = () => {
   useEffect(() => {
     toggleCurrentSchema();
     clearErrors();
-    setValue("employerName", "");
-    setValue("annualIncome", "");
+
+    if (currentEmploymentStatus !== "Employed") {
+      setValue("employerName", null);
+    }
   }, [
     currentEmploymentStatus,
     setCurrentSchema,
