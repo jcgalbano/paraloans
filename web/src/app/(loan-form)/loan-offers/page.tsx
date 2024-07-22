@@ -4,13 +4,17 @@ import { NextPage } from "next";
 
 import { useFormContext } from "react-hook-form";
 
-import { SectionHeadline } from "@/app/components/shared/SectionHeadline";
+import { LoanCard } from "@/app/components/LoanCard";
 import { LoanHead } from "@/app/components/LoanHead/LoanHead";
 import { LoanItem } from "@/app/components/LoanItem";
+import { SectionHeadline } from "@/app/components/shared/SectionHeadline";
+
+import sampleOutput from "@/../data/sample-output.json";
 
 const LoanOffers: NextPage = () => {
   const { getValues } = useFormContext();
   const loanFormObj = getValues();
+  const loanOffers = sampleOutput["loanOffers"];
 
   return (
     <div className="w-full h-screen">
@@ -31,7 +35,17 @@ const LoanOffers: NextPage = () => {
         </div>
       </div>
       <SectionHeadline content={"Best Loan Offers For You"} />
-      {JSON.stringify(loanFormObj)}
+      <div className="w-full flex flex-row flex-wrap">
+        {loanOffers.map((loan) => (
+          <LoanCard
+            key={loan.name}
+            name={loan.name}
+            monthlyRepayment={loan.monthlyRepayment}
+            interestRate={loan.interestRate}
+            fees={loan.fees}
+          />
+        ))}
+      </div>
     </div>
   );
 };
