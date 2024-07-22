@@ -22,7 +22,7 @@ export const FormSlider = ({
 
   useEffect(() => {
     setValue(field, defaultVal);
-  });
+  }, [defaultVal, field, setValue]);
 
   return (
     <div className="mb-12">
