@@ -23,7 +23,7 @@ const loanApplicationSchema = Joi.object({
     }),
   annualIncome: Joi.number().positive().required(),
   price: Joi.number().positive().required(),
-  deposit: Joi.number().positive().required(),
+  deposit: Joi.number().positive().allow(0).required(),
   loanPurpose: Joi.string().max(100).required(),
   loanTerm: Joi.number().integer().min(1).required(),
 });
